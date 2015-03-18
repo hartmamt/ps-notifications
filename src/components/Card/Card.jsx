@@ -7,10 +7,6 @@ require('./Card.css');
 
 var Card = React.createClass({
 
-  propTypes: {
-    type: React.PropTypes.oneOf(['empty']).isRequired
-  },
-
   render() {
     switch (this.props.type) {
       case "notification":
@@ -54,6 +50,21 @@ var Card = React.createClass({
 
               </div>
             );
+
+            case "default":
+
+              return (
+                <div className={"bs-callout bs-callout-default Card Card-" + this.props.type}>
+
+
+                  <h4>{this.props.title}</h4>
+
+
+
+                  {this.props.children}
+
+                </div>
+              );
       case "empty":
 
         return (

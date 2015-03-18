@@ -10,10 +10,10 @@ var conf = convict({
     default: 'development',
     env: 'NODE_ENV'
   },
-  getScheduleUrl: {
-    doc: 'The REST Endpoint to call.',
+  getNotificationsUrl: {
+    doc: 'The REST Endpoint to call for notifications',
     default: '',
-    env: 'SCHEDULE_URL'
+    env: 'NOTIFICATIONS_URL'
   },
   username: {
     doc: 'Endpoint username',

@@ -21,7 +21,7 @@ var commonConfig = {
     new webpack.DefinePlugin({
       '__USERNAME__': JSON.stringify(config.get('username')),
       '__PASSWORD__': JSON.stringify(config.get('password')),
-      '__SCHEDULE_URL__': JSON.stringify(config.get('getScheduleUrl'))
+      '__NOTIFICATIONS_URL__': JSON.stringify(config.get('getNotificationsUrl'))
     })
   ]
 };
@@ -51,7 +51,7 @@ var devConfig = {
     new webpack.DefinePlugin({
       '__USERNAME__': JSON.stringify(config.get('username')),
       '__PASSWORD__': JSON.stringify(config.get('password')),
-      '__SCHEDULE_URL__': JSON.stringify(config.get('getScheduleUrl'))
+      '__NOTIFICATIONS_URL__': JSON.stringify(config.get('getNotificationsUrl'))
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()

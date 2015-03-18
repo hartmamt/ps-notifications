@@ -13,7 +13,7 @@ BlackLion.SetSISConnector(PSConnector);
 
 import ArusNotification from './ArusNotification.jsx';
 
-var ArusScheduleContainer = React.createClass({
+var ArusNotificationContainer = React.createClass({
 
 	mixins: [
 		Reflux.connect(NotificationStore, 'notifications'),
@@ -41,6 +41,6 @@ var ArusScheduleContainer = React.createClass({
 
 });
 
-React.render(<ArusScheduleContainer/>, document.getElementById('arus'));
+React.render(<ArusNotificationContainer/>, document.getElementById('arus'));
 
 module.exports = Arus;

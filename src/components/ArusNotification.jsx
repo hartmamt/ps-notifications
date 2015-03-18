@@ -1,34 +1,31 @@
-var React = require('react');
-var { Panel } = require('react-bootstrap');
+import React from 'react';
+import { Col } from 'react-bootstrap';
+import Card from './Card/Card.jsx';
+import Loader from 'react-loader';
 
 var ArusNotification = React.createClass({
 
-	render: function() {
+	render() {
+		let loader = null;
+
+		if (this.props.notifications==undefined){
+			loader = <Loader/>;
+		}
+
 		let notifications = this.props.notifications.map(notif => {
 			return (
-				<Panel key={`Notif#${notif.id}`} header={notif.subject}>
+				<Card key={`Notif#${notif.id}`} className='Card-default' title={notif.subject} type="default">
 					{notif.message}
-				</Panel>
-			);
-		});
-
-		let events = this.props.events.map(evt => {
-			return (
-				<Panel key={`Event#${evt.id}`} onClick={this.props.changeReadStatus.bind(this, evt)}>
-					{evt.status} - {evt.message}
-				</Panel>
+				</Card>
 			);
 		});
 
 		return (
-			<Panel header="Notifications and Events">
-				<Panel header="Events">
-					{events}
-				</Panel>
-				<Panel header="Notifications">
-					{notifications}
-				</Panel>
-			</Panel>
+			<Col>
+			<h3>Notifications</h3>
+				{loader}
+				{notifications}
+			</Col>
 		);
 	}
 });
